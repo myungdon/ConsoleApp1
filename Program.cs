@@ -1,9 +1,14 @@
 ﻿using System;
 class MainClass {
     public static void Main(string[] args){
-        int num = 8;
+        //for(int i = 1; i <= 10; i++) Console.WriteLine(i);
+        int i = 1;
+        while (true)
+        {
+            Console.WriteLine(i);
+            i++;
 
-        if (num == 10) Console.WriteLine("입력 값은 10 입니다.");
-        else Console.WriteLine("입력 값은 10 아닙니다.");
+            if (i > 10) break;
+        }
     }
 }
