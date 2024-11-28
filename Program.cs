@@ -1,30 +1,34 @@
 ﻿using System;
 
 class Robot {
-    public String Name;
-    public String Move;
-
-    public Robot(String name) {
-        Name = name;
-        Console.WriteLine("로봇 이름은 " + name + "입니다.");
+    public void Move() 
+    {
+        Console.WriteLine("로봇이 움직입니다.");
     }
+}
 
-    public Robot(String name, String move){
-        Name = name;
-        Move = move;
-        Console.WriteLine(name + "이(가) " +  move + "를 합니다.");
+class CleanRobot : Robot
+{
+    public void Clean() { 
+        Console.WriteLine("로봇이 청소를 합니다.");
     }
+}
 
-    //public CleanRobot : Robot (String name, String move){
-    //    Name = name;
-    //    Console.WriteLine(name + "이(가)" + move);
-    //}
+class CookingRobot : Robot
+{
+    public void Cooking()
+    {
+        Console.WriteLine("로봇이(가) 요리를 합니다.");
+    }
 }
 
 
 class MainClass {
     public static void Main(string[] args){
-        Robot robot1 = new Robot("홀리몰리");
-        Robot robot2 = new Robot("피카츄", "청소");
+        CleanRobot clbot = new CleanRobot();
+        CookingRobot ckbot =new CookingRobot();
+        clbot.Move();
+        clbot.Clean();
+        ckbot.Cooking();
     }
 }
