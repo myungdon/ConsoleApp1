@@ -1,34 +1,15 @@
 ﻿using System;
 
-class Robot {
-    public void Move() 
-    {
-        Console.WriteLine("로봇이 움직입니다.");
-    }
-}
-
-class CleanRobot : Robot
+public class MainClass
 {
-    public void Clean() { 
-        Console.WriteLine("로봇이 청소를 합니다.");
-    }
-}
+    public static void Main() {
+        Console.WriteLine("나눌 숫자를 입력하세요: ");
+        int num = int.Parse(Console.ReadLine());
 
-class CookingRobot : Robot
-{
-    public void Cooking()
-    {
-        Console.WriteLine("로봇이(가) 요리를 합니다.");
-    }
-}
-
-
-class MainClass {
-    public static void Main(string[] args){
-        CleanRobot clbot = new CleanRobot();
-        CookingRobot ckbot =new CookingRobot();
-        clbot.Move();
-        clbot.Clean();
-        ckbot.Cooking();
-    }
+        try{
+            Console.WriteLine(10 / num);
+        } catch(Exception ex) {
+            Console.WriteLine("예외 상황 : " + ex.Message);
+        }
+    } 
 }
